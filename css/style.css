@@ -1,0 +1,1746 @@
+/* ========================================
+   மரிமாணிகுப்பம் பஞ்சாயத்து
+   ELITE PREMIUM DESIGN
+   ======================================== */
+
+:root {
+    --gold: #d4af37;
+    --gold-light: #f4e4bc;
+    --gold-dark: #b8960c;
+    --navy: #0a1628;
+    --navy-light: #1a2d4a;
+    --royal-blue: #1e3a5f;
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --cream: #faf8f5;
+    --text-dark: #1a1a1a;
+    --text-gray: #6b7280;
+    --saffron: #ff9933;
+    --green: #138808;
+    --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --shadow-gold: 0 4px 30px rgba(212, 175, 55, 0.3);
+    --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.3);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: auto;
+}
+
+body {
+    font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+    padding-top: 50px;
+    min-height: 100vh;
+    height: auto;
+}
+
+@media (max-width: 599px) {
+    body { padding-top: 42px; }
+    .header-content { padding: 10px 12px; }
+    .village-name {
+        font-size: 0.9rem;
+    }
+    .name-english {
+        display: none;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   STICKY HEADER TOOLBAR
+   ======================================== */
+.header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid var(--gold);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 15px;
+    width: 100%;
+}
+
+.header-divider {
+    display: none;
+}
+
+.village-name {
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.name-tamil {
+    color: var(--gold);
+}
+
+.name-english {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.name-english::before {
+    content: "|";
+    margin-right: 8px;
+    opacity: 0.5;
+}
+
+/* ========================================
+   PRESIDENT HERO - Elite Style
+   ======================================== */
+.president-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 50%, var(--navy-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elegant Background Pattern */
+.president-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Decorative Lines */
+.president-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+    transform: translateY(-50%);
+}
+
+.president-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Elite Photo Frame */
+.president-image {
+    width: 240px;
+    height: 300px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.president-image::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+    border-radius: 16px;
+    z-index: -2;
+    box-shadow: var(--shadow-gold);
+}
+
+.president-image::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    background: var(--navy);
+    border-radius: 12px;
+    z-index: -1;
+}
+
+.president-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.president-info {
+    color: var(--white);
+    max-width: 550px;
+}
+
+.president-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.president-name-en {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+/* Elite Title Badge */
+.president-title {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--navy);
+    padding: 14px 45px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 35px;
+    box-shadow: var(--shadow-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--gold-light);
+}
+
+.president-about p {
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.president-about .about-en {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--gold-light);
+    opacity: 0.9;
+}
+
+.president-subtitle {
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.achievement-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+.achievement-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.achievement-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-indicator span {
+    font-size: 0.8rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.scroll-arrow {
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+    border-right: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    transform: rotate(45deg);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gold-dark);
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ========================================
+   CENSUS SECTION - Elite Cards
+   ======================================== */
+.census-section {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--navy), var(--royal-blue));
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: var(--shadow-heavy);
+    transition: var(--transition);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card.population { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+.stat-card.male { background: linear-gradient(135deg, #0f3460, #1a508b); }
+.stat-card.female { background: linear-gradient(135deg, #7b2d5b, #9c3d6e); }
+.stat-card.households { background: linear-gradient(135deg, #1d4e4c, #2a6b69); }
+.stat-card.literacy { background: linear-gradient(135deg, #4a148c, #6a1b9a); }
+.stat-card.children { background: linear-gradient(135deg, #e65100, #f57c00); }
+.stat-card.voters { background: linear-gradient(135deg, #1565c0, #1976d2); }
+
+.census-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 15px 20px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--gold);
+}
+
+/* Village Map */
+.village-map-container {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.map-title {
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.map-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.map-wrapper {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-heavy);
+    border: 3px solid var(--gold);
+    display: inline-block;
+    max-width: 100%;
+}
+
+.village-map {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .map-wrapper {
+        padding: 10px;
+    }
+    .map-title {
+        font-size: 1.3rem;
+    }
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: rgba(212, 175, 55, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold);
+}
+
+.stat-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--gold);
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--gold-light);
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.stat-label-en {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Facilities Grid - Stats Card Style */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.facility-card {
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: var(--shadow-heavy);
+    transition: var(--transition);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.facility-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Facility Card Colors */
+.facility-card.school { background: linear-gradient(135deg, #667eea, #764ba2); }
+.facility-card.water { background: linear-gradient(135deg, #0288d1, #03a9f4); }
+.facility-card.handpump { background: linear-gradient(135deg, #5c6bc0, #7986cb); }
+.facility-card.roads { background: linear-gradient(135deg, #455a64, #607d8b); }
+.facility-card.govt { background: linear-gradient(135deg, var(--navy), var(--royal-blue)); }
+.facility-card.tank { background: linear-gradient(135deg, #00838f, #00acc1); }
+
+.facility-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: rgba(212, 175, 55, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold);
+}
+
+.facility-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--gold);
+}
+
+.facility-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--gold-light);
+}
+
+.facility-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.facility-label-en {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: var(--white);
+}
+
+.facility-label-en {
+    font-size: 0.75rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   INTRO VIDEO SECTION
+   ======================================== */
+.intro-video-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.intro-video-section .section-title {
+    color: var(--navy);
+}
+
+.intro-video-section .section-subtitle {
+    color: var(--gold-dark);
+}
+
+.intro-video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--gold);
+}
+
+.video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ========================================
+   SUB-VILLAGES SECTION
+   ======================================== */
+.villages-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+}
+
+.villages-section .section-title {
+    color: var(--white);
+}
+
+.villages-section .section-subtitle {
+    color: var(--gold);
+}
+
+.villages-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.village-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 16px 20px;
+    border-radius: 12px;
+    transition: var(--transition);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.village-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+    border-color: var(--gold);
+}
+
+.village-item.highlight {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.15));
+    border: 2px solid var(--gold);
+}
+
+.village-number {
+    width: 35px;
+    height: 35px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.village-item.highlight .village-number {
+    background: var(--white);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.village-name-item {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.village-item.highlight .village-name-item {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+@media (min-width: 600px) {
+    .villages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .villages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .village-item {
+        padding: 18px 25px;
+    }
+}
+
+/* ========================================
+   WORKS SECTION
+   ======================================== */
+.works-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+/* Elite Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+    border: 3px solid var(--gold);
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: var(--navy);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(10, 22, 40, 0.95));
+    color: var(--white);
+    padding: 60px 25px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-gold);
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.slider-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.slider-dots .dot.active {
+    background: var(--gold);
+    border-color: var(--white);
+    transform: scale(1.3);
+}
+
+/* Elite Work Cards */
+.works-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.work-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.work-card:hover .work-image img {
+    transform: scale(1.1);
+}
+
+.work-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.work-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(transparent, rgba(10, 22, 40, 0.4));
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.work-content {
+    padding: 25px 30px 30px;
+    border-top: 3px solid var(--gold);
+}
+
+.work-content h3 {
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.work-title-en {
+    font-size: 0.75rem;
+    color: var(--gold-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.work-desc {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* ========================================
+   VIDEO SECTION
+   ======================================== */
+.video-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+}
+
+.video-section .section-title {
+    color: var(--white);
+}
+
+.video-section .section-subtitle {
+    color: var(--gold);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.video-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+    border: 3px solid var(--gold);
+    transition: var(--transition);
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: var(--navy);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-title {
+    padding: 15px 20px 5px;
+    font-size: 1rem;
+    color: var(--navy);
+    font-weight: 600;
+    text-align: center;
+    background: var(--white);
+    margin: 0;
+}
+
+.video-date {
+    padding: 5px 20px 15px;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    text-align: center;
+    background: var(--white);
+    margin: 0;
+}
+
+.video-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--gold);
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+.contact-section {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: var(--white);
+    padding: 20px 40px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+    fill: var(--white);
+}
+
+.whatsapp-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.whatsapp-label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.whatsapp-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.contact-note {
+    margin-top: 25px;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Visiting Card Styles */
+.visiting-card {
+    max-width: 450px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, var(--navy), var(--royal-blue));
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+}
+
+.visiting-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 25px 15px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.card-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo-tamil {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.card-village {
+    display: flex;
+    flex-direction: column;
+}
+
+.village-tamil {
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.village-en {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.card-body {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-name {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, var(--white), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-name-en {
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.card-title {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--navy);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card-footer {
+    padding: 20px 25px 25px;
+}
+
+.card-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.card-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--white);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.card-decoration {
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+@media (max-width: 599px) {
+    .visiting-card {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .card-header {
+        padding: 20px 20px 12px;
+    }
+
+    .card-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-tamil {
+        font-size: 1.5rem;
+    }
+
+    .village-tamil {
+        font-size: 0.9rem;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-name {
+        font-size: 1.6rem;
+    }
+
+    .card-name-en {
+        font-size: 0.9rem;
+    }
+
+    .card-title {
+        font-size: 0.75rem;
+        padding: 8px 20px;
+    }
+
+    .card-footer {
+        padding: 15px 20px 20px;
+    }
+
+    .card-contact {
+        padding: 12px 15px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-number {
+        font-size: 1.1rem;
+    }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: var(--navy);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 4px solid var(--gold);
+}
+
+.footer-village {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+@media (min-width: 600px) {
+    .village-name { font-size: 1.1rem; }
+
+    .president-image {
+        width: 300px;
+        height: 380px;
+    }
+
+    .president-name { font-size: 3.5rem; }
+
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .stat-number { font-size: 3rem; }
+
+    .facilities-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .slider { height: 350px; }
+
+    .works-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP
+   ======================================== */
+@media (min-width: 992px) {
+    .village-name { font-size: 1.2rem; }
+
+    .president-section { padding: 80px 20px; }
+
+    .president-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 100px;
+        max-width: 1100px;
+    }
+
+    .president-image {
+        width: 350px;
+        height: 440px;
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    .president-info { max-width: 600px; }
+    .president-name { font-size: 4rem; }
+
+    .slider { height: 450px; }
+
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .work-image { height: 220px; }
+
+    .video-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+}
+
+/* ========================================
+   RESPONSIVE - LARGE DESKTOP
+   ======================================== */
+@media (min-width: 1200px) {
+    .president-card { gap: 120px; }
+
+    .president-image {
+        width: 380px;
+        height: 480px;
+    }
+
+    .president-name { font-size: 4.5rem; }
+}
+
+/* ========================================
+   VISION & MISSION SECTION
+   ======================================== */
+.vision-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--cream), var(--white));
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.vision-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--gold);
+}
+
+.vision-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--navy), var(--royal-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--gold);
+}
+
+.vision-icon svg {
+    width: 35px;
+    height: 35px;
+    fill: var(--gold);
+}
+
+.vision-card h3 {
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.vision-text-en {
+    font-size: 0.75rem;
+    color: var(--gold-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.vision-card p:last-child {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+@media (min-width: 600px) {
+    .vision-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .vision-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .vision-card {
+        padding: 40px 35px;
+    }
+}
+
+/* ========================================
+   ACHIEVEMENTS SECTION
+   ======================================== */
+.achievements-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+}
+
+.achievements-section .section-title {
+    color: var(--white);
+}
+
+.achievements-section .section-subtitle {
+    color: var(--gold);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.achievement-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px 25px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.achievement-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-gold);
+}
+
+.achievement-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--navy);
+}
+
+.achievement-card h3 {
+    font-size: 1.2rem;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.achievement-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+}
+
+@media (min-width: 600px) {
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .achievements-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .achievement-card {
+        padding: 35px 25px;
+    }
+}
+
+/* ========================================
+   FUTURE PLANS SECTION
+   ======================================== */
+.future-section {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.future-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.future-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: var(--shadow-soft);
+    border-left: 4px solid var(--gold);
+    transition: var(--transition);
+    position: relative;
+}
+
+.future-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.future-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(212, 175, 55, 0.3);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.future-card h3 {
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.future-card p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+    padding-right: 40px;
+}
+
+@media (min-width: 600px) {
+    .future-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .future-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .future-card {
+        padding: 35px 25px;
+    }
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+@media (max-width: 599px) {
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 35px;
+        letter-spacing: 2px;
+    }
+
+    .president-name {
+        font-size: 2.2rem;
+    }
+
+    .president-name-en {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .president-title {
+        padding: 12px 25px;
+        font-size: 0.8rem;
+    }
+
+    .president-info {
+        text-align: left;
+    }
+
+    .president-about {
+        text-align: left;
+    }
+
+    .president-about p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .achievement-list {
+        text-align: left;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .facility-card {
+        padding: 18px;
+    }
+
+    .facility-number {
+        font-size: 1.6rem;
+    }
+
+    .facility-label {
+        font-size: 0.85rem;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .slider-btn.prev { left: 10px; }
+    .slider-btn.next { right: 10px; }
+
+    .work-content {
+        padding: 20px;
+    }
+
+    .work-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .vision-card {
+        padding: 25px 20px;
+    }
+
+    .vision-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .achievement-card {
+        padding: 25px 20px;
+    }
+
+    .achievement-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .future-card {
+        padding: 25px 20px;
+    }
+
+    .future-number {
+        font-size: 2rem;
+    }
+
+    .future-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .future-card p {
+        padding-right: 30px;
+    }
+}
+
+/* Focus & Accessibility */
+button:focus {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
