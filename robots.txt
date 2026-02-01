@@ -1,5 +1,5 @@
 # Robots.txt for thulasiraman.online
-# துளசி ராமன் - மரிமாணிகுப்பம் கிராம தலைவர்
+# மிட்டூர் பஞ்சாயத்து - Mittur Panchayat
 
 User-agent: *
 Allow: /

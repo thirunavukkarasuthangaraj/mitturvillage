@@ -1,5 +1,5 @@
 /* ========================================
-   மரிமாணிகுப்பம் பஞ்சாயத்து
+   மிட்டூர் பஞ்சாயத்து
    ELITE PREMIUM DESIGN
    ======================================== */
 
@@ -80,9 +80,278 @@ body {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 12px 15px;
     width: 100%;
+}
+
+/* Language Toggle Button - Shows both languages */
+.lang-toggle {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border: none;
+    border-radius: 25px;
+    padding: 6px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: var(--transition);
+    box-shadow: 0 3px 12px rgba(212, 175, 55, 0.4);
+}
+
+.lang-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+}
+
+.lang-toggle .lang-ta,
+.lang-toggle .lang-en {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+/* Tamil mode - Tamil highlighted */
+.lang-toggle .lang-ta {
+    background: var(--navy);
+    color: var(--gold);
+}
+
+.lang-toggle .lang-en {
+    background: transparent;
+    color: var(--navy);
+    display: inline !important;
+}
+
+.lang-toggle .lang-divider {
+    color: var(--navy);
+    font-weight: 300;
+    opacity: 0.4;
+    font-size: 0.9rem;
+}
+
+/* When English mode is active - English highlighted */
+body.lang-english .lang-toggle .lang-ta {
+    background: transparent;
+    color: var(--navy);
+}
+
+body.lang-english .lang-toggle .lang-en {
+    background: var(--navy);
+    color: var(--gold);
+}
+
+/* Language Toggle - Hide/Show content */
+/* Tamil titles hidden in English mode */
+body.lang-english .section-title,
+body.lang-english .map-title,
+body.lang-english .ward-section-title,
+body.lang-english .president-title,
+body.lang-english .president-name,
+body.lang-english .category-header h3,
+body.lang-english .stat-label,
+body.lang-english .facility-label,
+body.lang-english .work-content h3,
+body.lang-english .vision-card h3,
+body.lang-english .achievement-card h3,
+body.lang-english .future-card h3,
+body.lang-english .fund-source,
+body.lang-english .work-blog-content h4,
+body.lang-english .work-blog-content p,
+body.lang-english .leader-role,
+body.lang-english .leader-name,
+body.lang-english .govt-role,
+body.lang-english .govt-name,
+body.lang-english .ward-number,
+body.lang-english .member-name,
+body.lang-english .hero-slide-caption h2,
+body.lang-english .hero-slide-caption p,
+body.lang-english .fund-note,
+body.lang-english .works-note,
+body.lang-english .census-note,
+body.lang-english .event-title-ta,
+body.lang-english .event-desc-ta {
+    display: none !important;
+}
+
+/* Event English content - hidden by default */
+.event-title-en,
+.event-desc-en {
+    display: none;
+}
+
+/* Show English events in English mode */
+body.lang-english .event-title-en {
+    display: block !important;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+body.lang-english .event-desc-en {
+    display: block !important;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+/* Village names - Tamil mode (default) */
+.village-name-en {
+    display: none !important;
+}
+
+/* Village names - English mode */
+body.lang-english .village-name-item {
+    display: none !important;
+}
+
+body.lang-english .village-name-en {
+    display: block !important;
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 600;
+    flex: 1;
+    text-align: left;
+}
+
+/* Show English instruction */
+body.lang-english .villages-instruction-inline {
+    display: none !important;
+}
+
+.villages-instruction-en {
+    display: none;
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+body.lang-english .villages-instruction-en {
+    display: inline-block !important;
+}
+
+/* English subtitles shown as main in English mode */
+body.lang-english .section-subtitle,
+body.lang-english .map-subtitle,
+body.lang-english .ward-section-subtitle,
+body.lang-english .president-title-en,
+body.lang-english .president-name-en,
+body.lang-english .category-header p,
+body.lang-english .stat-label-en,
+body.lang-english .facility-label-en,
+body.lang-english .work-title-en,
+body.lang-english .vision-text-en,
+body.lang-english .fund-source-en,
+body.lang-english .leader-name-en,
+body.lang-english .govt-role-en {
+    display: block !important;
+    font-size: 1.5rem !important;
+    color: var(--navy) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    margin-bottom: 30px !important;
+    font-weight: 700 !important;
+}
+
+body.lang-english .members-section .section-subtitle,
+body.lang-english .members-section .ward-section-subtitle {
+    color: var(--gold) !important;
+}
+
+/* President Card - English Mode Elite Styling */
+body.lang-english .members-section .president-title-en {
+    display: inline-block !important;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+    color: var(--navy) !important;
+    padding: 10px 30px !important;
+    border-radius: 50px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+body.lang-english .members-section .president-name-en {
+    display: block !important;
+    font-size: 1.8rem !important;
+    color: var(--white) !important;
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+    background: linear-gradient(135deg, var(--white), var(--gold-light)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Leader Cards - English Mode */
+body.lang-english .leader-card .leader-name-en {
+    display: block !important;
+    font-size: 1.1rem !important;
+    color: var(--white) !important;
+    font-weight: 700 !important;
+    margin-bottom: 0 !important;
+}
+
+body.lang-english .leader-card .leader-role {
+    display: inline-block !important;
+}
+
+/* Ward Members - English Mode */
+body.lang-english .ward-member-card .member-name {
+    display: block !important;
+    color: var(--white) !important;
+}
+
+body.lang-english .ward-member-card .ward-number {
+    display: block !important;
+    color: var(--gold) !important;
+}
+
+/* Government Employees - English Mode */
+body.lang-english .govt-employee-card .govt-name {
+    display: block !important;
+    color: var(--white) !important;
+}
+
+body.lang-english .govt-employee-card .govt-role-en {
+    display: block !important;
+    font-size: 0.9rem !important;
+    color: var(--gold-light) !important;
+    margin-bottom: 8px !important;
+}
+
+/* Section headers in members section - English Mode */
+body.lang-english .members-section .ward-section-subtitle {
+    display: block !important;
+    font-size: 1.6rem !important;
+    color: var(--gold) !important;
+    font-weight: 700 !important;
+    margin-bottom: 30px !important;
+    text-transform: none !important;
+    letter-spacing: 1px !important;
+}
+
+body.lang-english .stat-label-en,
+body.lang-english .facility-label-en {
+    font-size: 0.9rem !important;
+    color: var(--white) !important;
+    margin-bottom: 0 !important;
+}
+
+body.lang-english .leader-name-en,
+body.lang-english .govt-role-en {
+    font-size: 0.85rem !important;
+    margin-bottom: 0 !important;
 }
 
 .header-divider {
@@ -114,6 +383,184 @@ body {
     content: "|";
     margin-right: 8px;
     opacity: 0.5;
+}
+
+/* ========================================
+   HERO BANNER SLIDER
+   ======================================== */
+.hero-banner-section {
+    width: 100%;
+    height: 85vh;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+}
+
+.hero-slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.hero-slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 80px 30px 40px;
+    text-align: center;
+    color: var(--white);
+    z-index: 5;
+}
+
+.hero-slide-caption h2 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-slide-caption p {
+    font-size: 1.1rem;
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slider-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.hero-prev {
+    left: 20px;
+}
+
+.hero-next {
+    right: 20px;
+}
+
+.hero-slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.hero-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--gold);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.hero-slider-dot.active {
+    background: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .hero-banner-section {
+        height: 100vh;
+        min-height: 400px;
+    }
+
+    .hero-slide-caption h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-slide-caption p {
+        font-size: 1rem;
+    }
+
+    .hero-slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .hero-prev {
+        left: 10px;
+    }
+
+    .hero-next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner-section {
+        height: 100vh;
+        min-height: 350px;
+    }
+
+    .hero-slide-caption {
+        padding: 40px 15px 20px;
+    }
+
+    .hero-slide-caption h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-slide-caption p {
+        font-size: 0.9rem;
+    }
 }
 
 /* ========================================
@@ -501,6 +948,12 @@ body {
     gap: 20px;
 }
 
+@media (max-width: 599px) {
+    .facilities-grid {
+        gap: 12px;
+    }
+}
+
 .facility-card {
     border-radius: 20px;
     padding: 35px 25px;
@@ -532,9 +985,14 @@ body {
 .facility-card.school { background: linear-gradient(135deg, #667eea, #764ba2); }
 .facility-card.water { background: linear-gradient(135deg, #0288d1, #03a9f4); }
 .facility-card.handpump { background: linear-gradient(135deg, #5c6bc0, #7986cb); }
+.facility-card.pump { background: linear-gradient(135deg, #f57c00, #ff9800); }
 .facility-card.roads { background: linear-gradient(135deg, #455a64, #607d8b); }
 .facility-card.govt { background: linear-gradient(135deg, var(--navy), var(--royal-blue)); }
 .facility-card.tank { background: linear-gradient(135deg, #00838f, #00acc1); }
+.facility-card.pond { background: linear-gradient(135deg, #1976d2, #2196f3); }
+.facility-card.sports { background: linear-gradient(135deg, #7b1fa2, #9c27b0); }
+.facility-card.market { background: linear-gradient(135deg, #c62828, #e53935); }
+.facility-card.cemetery { background: linear-gradient(135deg, #37474f, #546e7a); }
 
 .facility-icon {
     width: 60px;
@@ -1307,6 +1765,62 @@ body {
     font-size: 0.85rem;
 }
 
+/* Footer English text */
+.footer-village-en {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-text-en {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+/* Developer Credit - Bottom */
+.dev-credit {
+    background: #0a1628;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.dev-credit span {
+    margin-right: 5px;
+}
+
+.dev-credit a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.dev-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Language toggle for footer */
+body.lang-english .footer-village,
+body.lang-english .footer-text {
+    display: none;
+}
+
+body.lang-english .footer-village-en,
+body.lang-english .footer-text-en {
+    display: block;
+}
+
+/* Default hide English footer */
+.footer-village-en,
+.footer-text-en {
+    display: none;
+}
+
 /* ========================================
    RESPONSIVE - TABLET
    ======================================== */
@@ -1678,15 +2192,32 @@ body {
     }
 
     .facility-card {
-        padding: 18px;
+        padding: 15px 12px;
+    }
+
+    .facility-icon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 12px;
+    }
+
+    .facility-icon svg {
+        width: 22px;
+        height: 22px;
     }
 
     .facility-number {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
     }
 
     .facility-label {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .facility-label-en {
+        font-size: 0.65rem;
     }
 
     .slider-btn {
@@ -1737,10 +2268,2200 @@ body {
     .future-card p {
         padding-right: 30px;
     }
+
+    /* Awards Section Mobile */
+    .awards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+
+    .award-card {
+        margin: 0 auto;
+        max-width: 320px;
+    }
+
+    .award-image {
+        height: 180px !important;
+    }
+
+    .award-content {
+        padding: 20px 15px !important;
+    }
+
+    .award-content h4 {
+        font-size: 1rem !important;
+    }
+
+    /* President Activities Mobile */
+    .president-activities-section {
+        padding: 50px 0 !important;
+    }
+
+    .activity-category {
+        margin-bottom: 40px !important;
+    }
+
+    .category-icon {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .category-icon svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .category-header h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .category-header p {
+        font-size: 0.75rem !important;
+    }
+
+    .fund-note, .works-note {
+        font-size: 0.85rem !important;
+        padding: 10px 15px !important;
+    }
+
+    .activity-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        max-width: 100% !important;
+    }
+
+    .fund-amount {
+        font-size: 1.4rem !important;
+    }
+
+    .works-blog-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .work-blog-card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .event-card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    /* Map Section Mobile */
+    .map-section {
+        padding: 50px 0 !important;
+    }
+
+    .map-title-main {
+        font-size: 1.5rem !important;
+    }
+
+    .map-title-en {
+        font-size: 0.8rem !important;
+    }
+
+    .map-section .map-wrapper {
+        border-radius: 12px !important;
+        border-width: 3px !important;
+    }
+
+    /* Members Section Mobile */
+    .members-section {
+        padding: 50px 0 !important;
+    }
+
+    .members-section .president-card {
+        padding: 20px 15px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .members-section .president-image {
+        width: 130px !important;
+        height: 160px !important;
+    }
+
+    .members-section .president-name {
+        font-size: 1.2rem !important;
+    }
+
+    .members-section .president-title {
+        font-size: 0.75rem !important;
+        padding: 6px 18px !important;
+    }
+
+    .ward-section-title {
+        font-size: 1.2rem !important;
+    }
+
+    .ward-section-subtitle {
+        font-size: 0.75rem !important;
+        margin-bottom: 25px !important;
+    }
+
+    .leaders-grid {
+        margin-bottom: 35px !important;
+    }
+
+    .leader-card {
+        padding: 18px 15px !important;
+    }
+
+    .leader-image {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .leader-name {
+        font-size: 0.95rem !important;
+    }
+
+    .ward-members-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .ward-member-card {
+        padding: 12px 8px !important;
+    }
+
+    .ward-member-image {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .govt-employees-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .govt-employee-card {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    /* WhatsApp Buttons Mobile */
+    .card-whatsapp-btn {
+        padding: 8px 16px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .card-whatsapp-btn svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    /* Section Padding Mobile */
+    section {
+        padding: 50px 0 !important;
+    }
+
+    .container {
+        padding: 0 15px !important;
+    }
 }
 
 /* Focus & Accessibility */
 button:focus {
     outline: 3px solid var(--gold);
     outline-offset: 3px;
+}
+
+/* ========================================
+   VILLAGE ACCORDION STYLES
+   ======================================== */
+/* Inline Villages Section (under map) - Modern Card Design */
+.villages-inline-section {
+    margin: 50px 0;
+    text-align: center;
+    background: transparent;
+}
+
+.villages-inline-section .map-title {
+    color: var(--navy);
+}
+
+@media (max-width: 599px) {
+    .villages-inline-section {
+        margin: 30px 0;
+    }
+}
+
+.villages-instruction-inline {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.villages-accordion-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.village-accordion-item {
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 10px);
+}
+
+.village-accordion-item.active {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 992px) {
+    .village-accordion-item {
+        max-width: calc(50% - 8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .village-accordion-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.villages-instruction {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.villages-accordion {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Modern Village Card Design */
+.village-accordion-item {
+    background: var(--white);
+    border-radius: 16px;
+    border: none;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.village-accordion-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+}
+
+.village-accordion-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.village-accordion-item.highlight {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff5d6 100%);
+    border: 2px solid var(--gold);
+}
+
+.village-accordion-item.highlight::before {
+    width: 0;
+}
+
+.village-accordion-item.active {
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+}
+
+.village-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.village-header:hover {
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.village-accordion-item .village-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+    color: var(--gold);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(10, 22, 40, 0.3);
+}
+
+.village-accordion-item.highlight .village-number {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: var(--navy);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.village-accordion-item .village-name-item {
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 600;
+    flex: 1;
+    text-align: left;
+}
+
+.village-accordion-item.highlight .village-name-item {
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.village-toggle {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+.village-accordion-item.active .village-toggle {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+    color: var(--gold);
+    transform: rotate(45deg);
+}
+
+.village-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.village-accordion-item.active .village-content {
+    max-height: 3000px;
+}
+
+.activities-section {
+    padding: 20px 25px;
+}
+
+.activities-section:first-child {
+    padding-top: 25px;
+}
+
+.activities-title {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid;
+}
+
+.activities-title.completed-title {
+    color: #059669;
+    border-color: #10b981;
+}
+
+.activities-title.pending-title {
+    color: #d97706;
+    border-color: #f59e0b;
+}
+
+.activity-count {
+    background: linear-gradient(135deg, var(--navy), var(--royal-blue));
+    color: var(--gold);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 599px) {
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Activity List Item - Modern Card */
+.activity-list-item {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.activity-list-item:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.activity-list-item.completed {
+    border-left: 5px solid #10b981;
+}
+
+.activity-list-item.pending {
+    border-left: 5px solid #f59e0b;
+}
+
+/* Activity Header */
+.activity-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.activity-title-section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.activity-status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.activity-status-badge.completed {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.activity-status-badge.pending {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.activity-name {
+    font-size: 1.15rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin: 0;
+}
+
+.activity-fund-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.activity-fund-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.activity-fund-badge.inr {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--navy);
+}
+
+.activity-fund-badge.usd {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.activity-fund-badge .currency-symbol {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.activity-fund-badge .fund-amount {
+    font-size: 1rem;
+}
+
+.activity-fund-badge svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--navy);
+}
+
+@media (max-width: 480px) {
+    .activity-fund-container {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .activity-fund-badge {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Activity Body */
+.activity-list-body {
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 22px;
+    background: var(--white);
+}
+
+@media (min-width: 992px) {
+    .activity-list-body {
+        grid-template-columns: 320px 1fr;
+    }
+}
+
+@media (max-width: 599px) {
+    .activity-list-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Image Gallery */
+.activity-images-gallery {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f1f5f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.activity-img-item {
+    display: none;
+    cursor: pointer;
+}
+
+.activity-img-item.active {
+    display: block;
+}
+
+.activity-img-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+@media (min-width: 992px) {
+    .activity-img-item img {
+        height: 220px;
+    }
+}
+
+.activity-img-item:hover img {
+    transform: scale(1.05);
+}
+
+.activity-img-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: linear-gradient(transparent, rgba(10, 22, 40, 0.9));
+}
+
+.img-nav-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    background: var(--gold);
+    color: var(--navy);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+}
+
+.img-nav-btn:hover {
+    background: var(--white);
+    transform: scale(1.1);
+}
+
+.img-counter {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(10, 22, 40, 0.7);
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+/* Activity Details */
+.activity-details {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.activity-description {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 18px;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+}
+
+.activity-description p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Audio Player */
+.activity-audio {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.audio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.audio-label svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--gold);
+}
+
+.audio-player {
+    width: 100%;
+    height: 45px;
+    border-radius: 25px;
+}
+
+.audio-player::-webkit-media-controls-panel {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+}
+
+.no-activities {
+    text-align: center;
+    color: var(--text-gray);
+    padding: 40px 20px;
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 12px;
+    border: 2px dashed #e5e7eb;
+}
+
+/* Image Modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.image-modal-close:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 599px) {
+    .village-header {
+        padding: 14px 15px;
+    }
+
+    .village-accordion-item .village-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .village-accordion-item .village-name-item {
+        font-size: 0.9rem;
+    }
+
+    .activities-section {
+        padding: 15px;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-image {
+        height: 140px;
+    }
+}
+
+/* ========================================
+   PANCHAYAT MEMBERS SECTION
+   ======================================== */
+.members-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.members-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.members-section .section-title {
+    color: var(--white);
+}
+
+.members-section .section-subtitle {
+    color: var(--gold);
+}
+
+/* President Card - Centered Style */
+.members-section .president-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 30px 30px 25px;
+    margin-bottom: 50px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.members-section .president-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+}
+
+.members-section .president-image {
+    width: 180px;
+    height: 220px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.members-section .president-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+    border-radius: 16px;
+    z-index: -2;
+    box-shadow: var(--shadow-gold);
+}
+
+.members-section .president-image::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: var(--navy);
+    border-radius: 12px;
+    z-index: -1;
+}
+
+.members-section .president-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.members-section .president-info {
+    color: var(--white);
+}
+
+.members-section .president-title {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--navy);
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    box-shadow: var(--shadow-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.members-section .president-title-en {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.members-section .president-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 3px;
+}
+
+.members-section .president-name-en {
+    font-size: 1rem;
+    color: var(--gold-light);
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+/* Ward Section Titles */
+.ward-section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.ward-section-subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+/* Expandable Members Section */
+.members-expandable {
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.members-expand-btn {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 18px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.members-expand-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.members-expand-btn:hover::before {
+    left: 100%;
+}
+
+.members-expand-btn:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.1));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.expand-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.expand-title-en {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+body.lang-english .expand-title {
+    display: none;
+}
+
+body.lang-english .expand-title-en {
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.expand-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.expand-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--navy);
+    transition: var(--transition);
+}
+
+.members-expandable.expanded .expand-icon svg {
+    transform: rotate(180deg);
+}
+
+.members-expand-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.3s ease;
+    padding: 0;
+}
+
+.members-expandable.expanded .members-expand-content {
+    max-height: 3000px;
+    padding-top: 30px;
+}
+
+@media (max-width: 599px) {
+    .members-expand-btn {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .expand-title {
+        font-size: 1rem;
+    }
+
+    .expand-title-en {
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+        order: 3;
+    }
+
+    body.lang-english .expand-title-en {
+        font-size: 1rem;
+    }
+}
+
+/* Ward Members Grid */
+.ward-members-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 600px) {
+    .ward-members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .ward-members-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Ward Member Card */
+.ward-member-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px 15px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: var(--transition);
+}
+
+.ward-member-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.ward-member-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.ward-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--navy-light), var(--royal-blue));
+}
+
+.member-placeholder svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--gold);
+    opacity: 0.7;
+}
+
+.ward-member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ward-number {
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ward-member-info .member-name {
+    font-size: 0.85rem;
+    color: var(--white);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Leaders Grid (Vice President & Councillors) */
+.leaders-grid {
+    display: grid;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.leaders-grid.single {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+}
+
+.leaders-grid.three {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 700px;
+}
+
+@media (max-width: 768px) {
+    .leaders-grid.three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .leaders-grid.three {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+    }
+}
+
+/* Leader Card */
+.leader-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    transition: var(--transition);
+}
+
+.leader-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+.leader-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--gold);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.leader-role {
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(212, 175, 55, 0.15);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 0 auto 8px;
+}
+
+.leader-name {
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.leader-name-en {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+/* Government Employees Grid */
+.govt-employees-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 480px) {
+    .govt-employees-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+    }
+}
+
+/* Government Employee Card */
+.govt-employee-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 2px solid rgba(30, 58, 95, 0.5);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.govt-employee-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+}
+
+.govt-employee-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-5px);
+    border-color: rgba(30, 58, 95, 0.8);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.govt-employee-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.govt-employee-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-placeholder.govt {
+    background: linear-gradient(135deg, #1e3a5f, #0a1628);
+}
+
+.member-placeholder.govt svg {
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.govt-employee-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.govt-role {
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    font-weight: 700;
+}
+
+.govt-role-en {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.govt-name {
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+@media (max-width: 599px) {
+    .members-section {
+        padding: 50px 0;
+    }
+
+    .members-section .president-card {
+        padding: 25px 20px 20px;
+        margin-bottom: 35px;
+    }
+
+    .members-section .president-image {
+        width: 140px;
+        height: 170px;
+        margin-bottom: 15px;
+    }
+
+    .members-section .president-name {
+        font-size: 1.3rem;
+    }
+
+    .ward-section-title {
+        font-size: 1.3rem;
+    }
+
+    .ward-members-grid {
+        gap: 12px;
+    }
+
+    .ward-member-card {
+        padding: 15px 10px;
+    }
+
+    .ward-member-image {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .member-placeholder svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .ward-member-info .member-name {
+        font-size: 0.75rem;
+    }
+
+    .leader-card {
+        padding: 20px 15px;
+    }
+
+    .leader-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .leader-name {
+        font-size: 1rem;
+    }
+
+    .govt-employee-card {
+        padding: 25px 15px;
+    }
+
+    .govt-employee-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .govt-role {
+        font-size: 0.8rem;
+    }
+
+    .govt-name {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   WHATSAPP BUTTONS FOR MEMBER CARDS
+   ======================================== */
+/* President Card WhatsApp Button */
+.card-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.card-whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+.card-whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--white);
+}
+
+.card-whatsapp-btn span {
+    color: var(--white);
+}
+
+/* Small WhatsApp Button for Leader Cards */
+.card-whatsapp-btn.small {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    margin-top: 15px;
+}
+
+.card-whatsapp-btn.small svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Ward Member WhatsApp Button */
+.ward-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border-radius: 50%;
+    margin-top: 12px;
+    transition: var(--transition);
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+}
+
+.ward-whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+}
+
+.ward-whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--white);
+}
+
+/* Government Employee WhatsApp Button */
+.govt-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: var(--white);
+    padding: 10px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: var(--transition);
+    box-shadow: 0 3px 12px rgba(37, 211, 102, 0.4);
+}
+
+.govt-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.govt-whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--white);
+}
+
+.govt-whatsapp-btn span {
+    color: var(--white);
+}
+
+@media (max-width: 599px) {
+    .card-whatsapp-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .card-whatsapp-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .ward-whatsapp-btn {
+        width: 32px;
+        height: 32px;
+        margin-top: 10px;
+    }
+
+    .ward-whatsapp-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .govt-whatsapp-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   VILLAGE MAP SECTION
+   ======================================== */
+.map-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+    text-align: center;
+}
+
+.map-section .section-title {
+    color: var(--white);
+}
+
+.map-section .section-subtitle {
+    color: var(--gold);
+}
+
+.map-header {
+    margin-bottom: 40px;
+}
+
+.map-title-main {
+    font-size: 2.2rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.map-title-en {
+    font-size: 1rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+/* Always show both Tamil and English in map section */
+body.lang-english .map-title-main,
+body.lang-english .map-title-en {
+    display: block !important;
+}
+
+@media (max-width: 599px) {
+    .map-title-main {
+        font-size: 1.6rem;
+    }
+
+    .map-title-en {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+}
+
+.map-section .map-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 4px solid var(--gold);
+}
+
+.map-section .village-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* English mode styling for map section */
+body.lang-english .map-section .section-subtitle {
+    display: block !important;
+    font-size: 1.8rem !important;
+    color: var(--white) !important;
+    margin-bottom: 30px !important;
+}
+
+@media (max-width: 599px) {
+    .map-section {
+        padding: 50px 0;
+    }
+
+    .map-section .map-wrapper {
+        border-radius: 12px;
+        border-width: 3px;
+    }
+}
+
+/* ========================================
+   PRESIDENT ACTIVITIES SECTION
+   ======================================== */
+.president-activities-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+}
+
+.activity-category {
+    margin-bottom: 50px;
+}
+
+.activity-category:last-child {
+    margin-bottom: 0;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon.funds {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.category-icon.works {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.category-icon.events {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.category-icon svg {
+    width: 35px;
+    height: 35px;
+    fill: var(--white);
+}
+
+.category-header h3 {
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.category-header p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.fund-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--navy);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #10b981;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.works-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--navy);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.1));
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fund-note-en,
+.works-note-en {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--navy);
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fund-note-en {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+    border-left: 4px solid #10b981;
+}
+
+.works-note-en {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.1));
+    border-left: 4px solid #3b82f6;
+}
+
+/* Show English notes in English mode */
+body.lang-english .fund-note-en,
+body.lang-english .works-note-en {
+    display: block !important;
+}
+
+/* Fund Cards */
+.activity-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.activity-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.activity-card.funds {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card.funds:hover {
+    border-color: #10b981;
+}
+
+.activity-card-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-card-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--white);
+}
+
+.activity-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fund-amount {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #059669;
+}
+
+.fund-source {
+    font-size: 1rem;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.fund-source-en {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Works Blog Grid */
+.works-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.work-blog-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.work-blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.work-blog-image {
+    height: 160px;
+    overflow: hidden;
+}
+
+.work-blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.work-blog-card:hover .work-blog-image img {
+    transform: scale(1.1);
+}
+
+.work-blog-content {
+    padding: 20px;
+    border-top: 3px solid var(--gold);
+}
+
+.work-blog-content h4 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.work-blog-content p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.work-date {
+    font-size: 0.75rem;
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Events Grid */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #f59e0b;
+    transition: var(--transition);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.event-icon {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--white);
+}
+
+.event-card h4 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.event-card p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .works-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 599px) {
+    .president-activities-section {
+        padding: 60px 0;
+    }
+
+    .category-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .category-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .category-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .activity-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+
+    .fund-amount {
+        font-size: 1.5rem;
+    }
+
+    .works-blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-blog-image {
+        height: 140px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        padding: 20px 15px;
+    }
+}
+
+/* ========================================
+   AWARDS SECTION
+   ======================================== */
+.category-icon.awards {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9) !important;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.award-card {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+    border: 2px solid rgba(139, 92, 246, 0.3) !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+}
+
+.award-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.25);
+    border-color: #8b5cf6;
+}
+
+.award-image {
+    height: 200px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+}
+
+.award-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(139, 92, 246, 0.2));
+}
+
+.award-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.award-card:hover .award-image img {
+    transform: scale(1.1);
+}
+
+.award-content {
+    padding: 25px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--white), #faf5ff);
+    border-top: 4px solid #8b5cf6;
+}
+
+.award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.award-badge svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--white);
+}
+
+.award-content h4 {
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.award-content .award-title-en {
+    font-size: 0.75rem;
+    color: #6d28d9;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.award-content p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.award-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #8b5cf6;
+    font-weight: 600;
+    background: rgba(139, 92, 246, 0.1);
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .awards-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+    }
+
+    .award-card {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 599px) {
+    .awards-grid {
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    .award-image {
+        height: 180px !important;
+    }
+
+    .award-content {
+        padding: 18px 15px !important;
+    }
+
+    .award-content h4 {
+        font-size: 1rem !important;
+    }
+
+    .award-badge {
+        padding: 6px 14px !important;
+        font-size: 0.7rem !important;
+    }
 }
